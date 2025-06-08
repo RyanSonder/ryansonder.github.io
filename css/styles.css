@@ -1,76 +1,105 @@
 /* Define styles */
 :root {
-    /* CSS HEX */
-    --backgound-dark: #051622;
-    --primary-color: #DEB992;
-    --accent-color: #1BA098;
-
-    --cal-poly-green: #26532bff;
-    --shamrock-green: #399e5aff;
-    --honeydew: #dff8ebff;
-    --raisin-black: #2d232eff;
-    --wenge: #534b52ff;
+  /* CSS HEX */
+  --backgound-dark: #051622;
+  --primary-color: #DEB992;
+  --accent-color: #1BA098;
 }
-
 
 /* General styles for the web page */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
-    background-color: var(--backgound-dark);
+  height: 100%;
+  width: 100%;
+  background-color: var(--backgound-dark);
 }
 
 /* Flexbox styles for the navigation bar */
 .flexbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Vertically center items */
-    padding: 1em 3em;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    position: fixed;
-    z-index: 1000;
-    
-    /* Color for the navigation bar */
-    color: var(--accent-color);
-    font-size: 1.5em;
-    font-weight: bold;
-    
-    /* Background color for the navigation bar */
-    background-color: transparent
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center items */
+  padding: 1em 3em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 1000;
+
+  /* Color for the navigation bar */
+  color: var(--accent-color);
+  font-size: 1.5em;
+  font-weight: bold;
+
+  /* Background color for the navigation bar */
+  background-color: var(--backgound-dark);
 }
+
 .flexbar-menu {
-    display: flex;
-    gap: 3em; /* Space between menu items */
-
-    list-style-type: none; /* Remove default list styling */
+  display: flex;
+  gap: 3em; /* Space between menu items */
+  list-style-type: none; /* Remove default list styling */
 }
-.flexbar-nav {
-    display: flex;
-    gap: 1em; /* Space between navigation items */
 
-    color: var(--accent-color);
+.flexbar-nav {
+  display: flex;
+  gap: 1em; /* Space between navigation items */
+  color: var(--accent-color);
+}
+
+/* Styles for the main content area */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  height: 100vh; /* Full viewport height */
+  margin-top: 80px; /* Space for the fixed navigation bar */
+}
+
+hr.divider {
+  width: 90%;
+  height: 3px;
+  margin: 3em 2em 2em 2em; /* Add more space above */
+  align-items: center;
+  display: flex;
+  text-align: center;
+  color: var(--primary-color);
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: visible; /* Ensure pseudo-element is visible */
+}
+hr.divider::before {
+  content: attr(data-text);
+  font-size: 16px;
+  color: var(--primary-color);
+  background: var(--backgound-dark);
+  padding: 0 0.5em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 body {
-    margin: 2em;
-    
-    font-family: sans-serif;
+  margin: 2em;
+  font-family: sans-serif;
+  background-color: transparent;
+  color: var(--primary-color);
+}
 
-    background-color: transparent;
-}
 h1 {
-    background-color: transparent;
+  background-color: transparent;
 }
+
 a {
-    background-color: transparent;
-    text-decoration: none;
+  color: var(--accent-color);
+
+  background-color: transparent;
+  text-decoration: none;
 }
